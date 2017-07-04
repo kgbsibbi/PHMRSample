@@ -2,9 +2,15 @@ package phmr;
 
 import javax.xml.bind.annotation.*;
 
-import phmr.common.CodeSystem;
-import phmr.common.Id;
-import phmr.common.TimeValue;
+import phmr.elements.Author;
+import phmr.elements.CodeSystem;
+import phmr.elements.Component2;
+import phmr.elements.Custodian;
+import phmr.elements.DocumentationOf;
+import phmr.elements.Id;
+import phmr.elements.InformationRecipient;
+import phmr.elements.RecordTarget;
+import phmr.elements.TimeValue;
 
 @XmlRootElement
 @XmlType(name="ClinicalDocument")
@@ -38,6 +44,8 @@ public class ClinicalDocument {
 	InformationRecipient informationRecipient;
 	@XmlElement
 	DocumentationOf documentationOf;
+	@XmlElement
+	Component2 component;
 	
 	public void init(){
 		typeId = new Id("2.16.840.1.113883.1.3", "POCD_HD000040");
@@ -53,5 +61,6 @@ public class ClinicalDocument {
 		custodian = new Custodian();
 		informationRecipient = new InformationRecipient();
 		documentationOf = new DocumentationOf();
+		component = new Component2();
 	}
 }
