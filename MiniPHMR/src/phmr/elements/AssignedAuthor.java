@@ -3,7 +3,8 @@ package phmr.elements;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name="assignedAuthor")
+@XmlType(name="assignedAuthor"
+, propOrder={"id", "addr", "telecom", "assignedPerson", "representedOrganization"})
 public class AssignedAuthor {
 	private Id id;
 	private AddressSet addr;

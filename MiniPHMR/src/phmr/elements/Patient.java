@@ -2,7 +2,7 @@ package phmr.elements;
 
 import javax.xml.bind.annotation.*;
 
-@XmlType(name="patient")
+@XmlType(name="patient", propOrder={"name", "administrativeGenderCode", "birthTime"})
 public class Patient {
 	
 	

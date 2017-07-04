@@ -5,10 +5,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 public class Id {
 	private String root;
 	private String extension;
+	private String assigningAuthorityName;
 	
 	public Id(String root, String extension){
-		if(root != null) this.root = root;
-		if(extension != null) this.extension = extension;
+		this.root = root;
+		this.extension = extension;
+	}
+	
+	public Id(String root){
+		this.root = root;
 	}
 
 	@XmlAttribute
@@ -27,5 +32,13 @@ public class Id {
 
 	public void setExtension(String extension) {
 		this.extension = extension;
+	}
+	
+	@XmlAttribute
+	public String getAssigningAuthorityName(){
+		return assigningAuthorityName;
+	}
+	public void setAssigningAuthorityName(String name){
+		assigningAuthorityName = name;
 	}
 }

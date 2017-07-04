@@ -23,6 +23,6 @@ public class Component3 {
 	}
 	
 	public Component3(){
-		section = new Section(0); // Data Section
+		section = new Section(Section.VITAL); // Data Section
 	}
 }

@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import phmr.elements.*;
 
-@XmlType(name="intendedRecipient")
+@XmlType(name="intendedRecipient", propOrder={"id", "addr", "telecom", "informationRecipient"})
 public class IntendedRecipient {
 
 	private Id id;

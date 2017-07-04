@@ -3,7 +3,7 @@ package phmr.elements;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name="organization")
+@XmlType(name="organization", propOrder={"id", "name", "telecom", "addr"})
 public class Organization {
 
 	// id, name, telecom, address를 가짐 

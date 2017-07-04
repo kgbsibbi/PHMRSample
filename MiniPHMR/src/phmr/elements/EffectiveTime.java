@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name="effectiveTime")
+@XmlType(name="effectiveTime", propOrder={"low", "high"})
 public class EffectiveTime {
 
 	private String value;

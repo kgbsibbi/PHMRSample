@@ -12,9 +12,11 @@ import phmr.elements.InformationRecipient;
 import phmr.elements.RecordTarget;
 import phmr.elements.TimeValue;
 
-@XmlRootElement
-@XmlType(name="ClinicalDocument")
+@XmlRootElement(name="ClinicalDocument")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ClinicalDocument {
+	@XmlAttribute
+	String xmlns = "urn:hl7-org:v3";
 
 	// Header Elements
 	@XmlElement
@@ -31,7 +33,7 @@ public class ClinicalDocument {
 	@XmlElement
 	TimeValue effectiveTime;
 	@XmlElement
-	CodeSystem confienctialityCode;
+	CodeSystem confidentialityCode;
 	@XmlElement
 	CodeSystem languageCode;
 	@XmlElement
@@ -49,12 +51,12 @@ public class ClinicalDocument {
 	
 	public void init(){
 		typeId = new Id("2.16.840.1.113883.1.3", "POCD_HD000040");
-		templateId = new Id("2.16.840.1.113883.10.20.9", null);
-		id = new Id("db734647-fc99-424c-a864-7e3cda82e703", null);
+		templateId = new Id("2.16.840.1.113883.10.20.9");
+		id = new Id("db734647-fc99-424c-a864-7e3cda82e703");
 		code = new CodeSystem("53576-5", "2.16.840.1.113883.6.1");
 		title = new String("Good Health Personal Healthcare Monitoring Report");
 		effectiveTime = new TimeValue(); // Now
-		confienctialityCode  = new CodeSystem("N", "2.16.840.1.113883.5.25");
+		confidentialityCode  = new CodeSystem("N", "2.16.840.1.113883.5.25");
 		languageCode = new CodeSystem("en-US", null);
 		recordTarget = new RecordTarget();
 		author = new Author();

@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name="structuredBody")
 public class StructuredBody {
 
-	@XmlElement
-	ArrayList<Component3> component;
 	
-	Component3 data;
-	Component3 equipment;
+	private ArrayList<Component3> component;
+	private Component3 data;
+	private Component3 equipment;
 	
 	public void setComponents(ArrayList<Component3> component){
 		this.component = component;
 	}
 	
+	@XmlElement(name="component")
 	public ArrayList<Component3> getComponent(){
 		return component;
 	}
@@ -33,12 +33,12 @@ public class StructuredBody {
 	}
 	
 	private Section createDataSection(){
-		Section section = new Section(0);
+		Section section = new Section(Section.VITAL);
 		return section;
 	}
 	
 	private Section createEquipmentSection(){
-		Section section = new Section(1);
+		Section section = new Section(Section.EQUIPMENT);
 		return section;
 	}
 }
