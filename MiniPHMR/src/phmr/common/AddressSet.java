@@ -1,10 +1,10 @@
-package phmr;
+package phmr.common;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name="addr")
-public class Address {
+public class AddressSet {
 	
 	@XmlElement
 	String streetAddressLine;
@@ -17,7 +17,7 @@ public class Address {
 	@XmlElement 
 	String country;
 	
-	public Address(){
+	public AddressSet(){
 		streetAddressLine = "123 Home Street";
 		city = "Ann Arbor";
 		state = "MI";
@@ -25,7 +25,7 @@ public class Address {
 		country="USA";
 	}
 	
-	public Address(String streetAddressLine, String city, String state, String postalCode, String country){
+	public AddressSet(String streetAddressLine, String city, String state, String postalCode, String country){
 		this.streetAddressLine = streetAddressLine;
 		this.city = city;
 		this.state = state;

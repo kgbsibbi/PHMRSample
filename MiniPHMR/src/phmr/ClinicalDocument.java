@@ -2,6 +2,10 @@ package phmr;
 
 import javax.xml.bind.annotation.*;
 
+import phmr.common.CodeSystem;
+import phmr.common.Id;
+import phmr.common.TimeValue;
+
 @XmlRootElement
 @XmlType(name="ClinicalDocument")
 public class ClinicalDocument {
@@ -9,33 +13,45 @@ public class ClinicalDocument {
 	// Header Elements
 	@XmlElement
 	//TypeId typeId;
-	ATTRRootExtension typeId;
+	Id typeId;
 	@XmlElement
-	ATTRRootExtension templateId;
+	Id templateId;
 	@XmlElement
-	ATTRRootExtension id;
+	Id id;
 	@XmlElement
-	ATTRCodeSystem code;
+	CodeSystem code;
 	@XmlElement
 	String title;
 	@XmlElement
 	TimeValue effectiveTime;
 	@XmlElement
-	ATTRCodeSystem confienctialityCode;
+	CodeSystem confienctialityCode;
 	@XmlElement
-	ATTRCodeSystem languageCode;
+	CodeSystem languageCode;
 	@XmlElement
 	RecordTarget recordTarget;
+	@XmlElement
+	Author author;
+	@XmlElement
+	Custodian custodian;
+	@XmlElement
+	InformationRecipient informationRecipient;
+	@XmlElement
+	DocumentationOf documentationOf;
 	
 	public void init(){
-		typeId = new ATTRRootExtension("2.16.840.1.113883.1.3", "POCD_HD000040");
-		templateId = new ATTRRootExtension("2.16.840.1.113883.10.20.9", null);
-		id = new ATTRRootExtension("db734647-fc99-424c-a864-7e3cda82e703", null);
-		code = new ATTRCodeSystem("53576-5", "2.16.840.1.113883.6.1");
+		typeId = new Id("2.16.840.1.113883.1.3", "POCD_HD000040");
+		templateId = new Id("2.16.840.1.113883.10.20.9", null);
+		id = new Id("db734647-fc99-424c-a864-7e3cda82e703", null);
+		code = new CodeSystem("53576-5", "2.16.840.1.113883.6.1");
 		title = new String("Good Health Personal Healthcare Monitoring Report");
 		effectiveTime = new TimeValue(); // Now
-		confienctialityCode  = new ATTRCodeSystem("N", "2.16.840.1.113883.5.25");
-		languageCode = new ATTRCodeSystem("en-US", null);
+		confienctialityCode  = new CodeSystem("N", "2.16.840.1.113883.5.25");
+		languageCode = new CodeSystem("en-US", null);
 		recordTarget = new RecordTarget();
+		author = new Author();
+		custodian = new Custodian();
+		informationRecipient = new InformationRecipient();
+		documentationOf = new DocumentationOf();
 	}
 }

@@ -2,19 +2,23 @@ package phmr;
 
 import javax.xml.bind.annotation.*;
 
+import phmr.common.CodeSystem;
+import phmr.common.NameSet;
+import phmr.common.TimeValue;
+
 @XmlType(name="patient")
 public class Patient {
 	
 	@XmlElement
-	Name name;
+	NameSet name;
 	@XmlElement
-	ATTRCodeSystem administrativeGenderCode;
+	CodeSystem administrativeGenderCode;
 	@XmlElement
 	TimeValue birthTime;
 	
 	public Patient(){
-		name = new Name("Ned", "Nuclear", null);
-		administrativeGenderCode = new ATTRCodeSystem("M", "2.16.840.1.113883.5.1");
+		name = new NameSet("Ned", "Nuclear", null);
+		administrativeGenderCode = new CodeSystem("M", "2.16.840.1.113883.5.1");
 		birthTime = new TimeValue("19501212");
 	}
 	

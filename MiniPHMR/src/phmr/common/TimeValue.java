@@ -1,4 +1,4 @@
-package phmr;
+package phmr.common;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -6,7 +6,7 @@ import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name="effectiveTime")
+@XmlType(name="time")
 public class TimeValue {
 	
 	@XmlAttribute
