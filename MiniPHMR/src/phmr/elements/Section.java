@@ -90,7 +90,7 @@ public class Section {
 			text="Weight";
 		}
 		else if(type == EQUIPMENT){
-			templateIds.add(new Id("2.16.840.1.113883.10.20.1.16", null));
+			templateIds.add(new Id("2.16.840.1.113883.10.20.1.7", null));
 			templateIds.add(new Id("2.16.840.1.113883.10.20.9.1", null));
 			code.setCode("46264-8");
 			code.setCodeSystem("2.16.840.1.113883.6.1");
